@@ -1,19 +1,19 @@
 ## About
 
-Elastic search [was recently used to index the Firefox4 twitter stream](http://pedroalves-bi.blogspot.com/2011/03/firefox-4-twitter-and-nosql.html)
+Elastic search [was recently used to index the Firefox4 Twitter stream](http://pedroalves-bi.blogspot.com/2011/03/firefox-4-twitter-and-nosql.html)
 and make it searchable. It's based on Lucene and has a simple JSON based interface
-that you can use to store objects and search through them (for instance even with CURL).
+that you can use to store objects and search through them (for instance, even with CURL).
 
-This also makes it easy to have your search indexes be updated in realtime
-whenever your CakePHP models change data. Cause basically all we'd have to
-do is do a Curl PUT, DELETE, etc to also make the change in Elastisearch
+This also makes it easy to update your search indexes in real-time
+whenever your CakePHP models change data. Cause all we'd have to
+do is do a Curl PUT, DELETE, etc, to also make the change in Elastisearch
 with every afterSave and afterDelete.
 
 This plugin provides
 
  - a behavior to automatically update your indexes
- - a shell task to do full index fills
- - a generic search component that you can attach to your AppController and will intercept
+ - a shell task to do complete index fills
+ - a generic search component that you can attach to your AppController will intercept
    search actions on enabled models. Will return results in JSON format for easy
    AJAX integration.
 
@@ -218,7 +218,7 @@ public $components = array(
 This component will only actually fire when the Controller->modelClass
 has the searchable behavior attached.
 
-I chose for this method  (vs a dedicated SearchesController) so ACLing is easier.
+I chose this method  (vs. a dedicated SearchesController), so ACLing is easier.
 e.g. You may already have an ACL for /tickets/*, so /tickets/search will automatically
 be restricted the same way.
 
